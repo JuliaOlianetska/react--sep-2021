@@ -1,0 +1,10 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    background: pink;
+}
+.posts-comments {
+    display: flex;
+    flex-direction: row;
+    background: bisque;
+}
