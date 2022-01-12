@@ -1,0 +1,19 @@
+.vessel-info {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    justify-content: space-evenly;
+    border: medium dashed black;
+    margin: 10px;
+}
+
+.description {
+    background: pink;
+    text-align: center;
+    padding-top: 50px;
+    width: 100px;
+}
+
+.img {
+    align-items: center;
+}
