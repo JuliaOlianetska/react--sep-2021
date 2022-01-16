@@ -1,0 +1,21 @@
+.allUsers {
+    display: flex;
+    flex-direction: row;
+}
+
+.userName {
+    margin: 20px;
+    width: 350px;
+}
+
+.fullInfo {
+    width: 500px;
+}
+
+.oneUser {
+    margin: 5px;
+}
+
+button {
+    margin: 5px;
+}
