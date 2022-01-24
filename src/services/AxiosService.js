@@ -1,6 +1,8 @@
 import axios from "axios";
-import url from "../configs/Urls";
+import baseURL from "../configs/Urls";
 
-const axiosService = axios.create({url});
+const axiosService = axios.create({
+    baseURL
+});
 
-export {axiosService};
+export default axiosService;
