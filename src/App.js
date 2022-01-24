@@ -17,8 +17,9 @@ export default function App() {
                 <Route path={'/'} element={<Layout/>}>
                     <Route index element={<HomePage/>}/>
                     <Route path={'users'} element={<UsersPage/>}/>
-                    <Route path={'posts'} element={<PostsPage/>}/>
-                    <Route path={'posts/:id'} element={<SinglePostPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}>
+                        <Route path={':id'} element={<SinglePostPage/>}/>
+                    </Route>
                     <Route path={'about'} element={<AboutPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
