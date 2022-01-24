@@ -4,7 +4,7 @@ export default function SinglePostPage() {
     useParams()
   return (
     <div>
-        {post.id} - {post.body}
+
 
     </div>
   );
