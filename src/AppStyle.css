@@ -33,3 +33,8 @@
     overflow: hidden;
     overflow-y: auto;
 }
+.postsAll, .usersAll {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}

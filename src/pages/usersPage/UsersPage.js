@@ -12,11 +12,12 @@ export default function UsersPage() {
 
 
   return (
-    <div>
-      <h4>Users:</h4>
-      {
-        users.map(user => <User key={user.id} user={user}/>)
-      }
+    <div className={'usersAll'}>
+        <div>
+            <h4>Users:</h4>
+            {
+                users.map(user => <User key={user.id} user={user}/>)
+            }</div>
       <div><Outlet/></div>
 
     </div>

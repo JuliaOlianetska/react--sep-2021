@@ -1,4 +1,4 @@
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {postService} from "../../services/Services";
 
@@ -7,7 +7,7 @@ export default function SinglePostPage() {
 
     const [post, setPost] = useState(null);
     const {state} = useLocation();
-    const navigate = useNavigate();
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         if (state) {
@@ -15,23 +15,24 @@ export default function SinglePostPage() {
             return
         }
         postService.getById(id).then(value => setPost({...value}))
-    }, [])
+    }, [id])
 
-const returnHome =() => {
-navigate('/')
-}
-
-const returnBack = () => {
-        navigate(-1)
+const goToComments = () => {
+        postService.getComments(id).then(value => setComments([...value]))
 }
     return (
         <div>
-            <button onClick={returnHome}>Home</button>
-            <button onClick={returnBack}>Back</button>
             {post && (
-                <div>{post.id}, {post.title}, {post.body}</div>
-            )
-            }
+                <div>
+                    <div>Post Id:{post.id}</div>
+                    <div>User Id:{post.userId}</div>
+                    <div>Title: {post.title}</div>
+                    <div>Post body: {post.body}</div>
+                </div>)}
+            <Link to={'comments'}>
+                <button onClick={goToComments}>Comments</button>
+            </Link>
+            <div><Outlet/></div>
 
         </div>
     );
