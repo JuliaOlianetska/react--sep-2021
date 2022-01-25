@@ -5,7 +5,7 @@ import {postService} from "../../services/Services";
 export default function SinglePostPage() {
     const {id} = useParams();
 
-    const [post, setPost] = useState({});
+    const [post, setPost] = useState(null);
     const {state} = useLocation();
     const navigate = useNavigate();
 

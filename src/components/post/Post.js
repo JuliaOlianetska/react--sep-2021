@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
 
-export default function Post({post}) {
+export default function Post({post:{id, title}}) {
   return (
     <div>
-        <Link to={post.id.toString()} state={post}>{post.title} </Link>
+        <Link to={id.toString()} state={post}>{id}) Title: {post.title}</Link>
 
     </div>
   );

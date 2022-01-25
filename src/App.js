@@ -8,6 +8,7 @@ import AboutPage from "./pages/aboutPage/AboutPage";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import Layout from "./components/layout/Layout";
 import SinglePostPage from "./pages/singlePostPage/SinglePostPage";
+import SingleUserPage from "./pages/singleUserPage/SingleUserPage";
 
 export default function App() {
     return (
@@ -16,11 +17,12 @@ export default function App() {
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
                     <Route index element={<HomePage/>}/>
-                    <Route path={'users'} element={<UsersPage/>}/>
+                    <Route path={'users'} element={<UsersPage/>}>
+                        <Route path={':id'} element={<SingleUserPage/>}/>
+                    </Route>
                     <Route path={'posts'} element={<PostsPage/>}>
                         <Route path={':id'} element={<SinglePostPage/>}/>
                     </Route>
-                    <Route path={'about'} element={<AboutPage/>}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
 
