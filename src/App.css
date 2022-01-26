@@ -1,0 +1,40 @@
+.header {
+    min-height: 70px;
+    background-color: deeppink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header a {
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+.header a[class='active'] {
+    text-decoration: underline;
+    color: green;
+}
+
+.footer {
+    min-height: 20px;
+    background-color: bisque;
+    color: black;
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+}
+.outlet {
+    width: 95%;
+    margin: 0 auto;
+    height: calc(100vh - 90px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+.postsAll, .usersAll {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
