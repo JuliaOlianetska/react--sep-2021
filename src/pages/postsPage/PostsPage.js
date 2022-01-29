@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import {postService} from "../../services/Services";
 import Post from "../../components/post/Post";
+import {Outlet} from "react-router-dom";
+import PostDetailsPage from "../postDetailsPage/PostDetailsPage";
 
 export default function PostsPage() {
 
@@ -11,8 +13,9 @@ export default function PostsPage() {
 
 
   return (
-    <div>
-      {posts.map(post=> <Post key={post.id} post={post}/>)}
+    <div className={'postsAll'}>
+      <div>{posts.map(post => <Post key={post.id} post={post}/>)}</div>
+<div><Outlet/></div>
 
     </div>
   );
