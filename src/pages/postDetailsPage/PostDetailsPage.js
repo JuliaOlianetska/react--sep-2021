@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
-import {postService} from "../../services/Services";
 import {Link, Outlet, useLocation, useParams} from "react-router-dom";
+
+import {postService} from "../../services/Services";
 import Comments from "../../components/comments/Comments";
 
 export default function PostDetailsPage() {

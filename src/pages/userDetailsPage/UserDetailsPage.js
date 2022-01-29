@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import {userService} from "../../services/Services";
 import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 
+import {userService} from "../../services/Services";
 import PostsOfUserPage from "../postsOfUserName/PostsOfUserPage";
 
 export default function UserDetailsPage() {

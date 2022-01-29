@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
+import {Outlet} from "react-router-dom";
+
 import {postService} from "../../services/Services";
 import Post from "../../components/post/Post";
-import {Outlet} from "react-router-dom";
 import PostDetailsPage from "../postDetailsPage/PostDetailsPage";
 
 export default function PostsPage() {
