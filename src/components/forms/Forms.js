@@ -1,11 +1,12 @@
 import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
+import {joiResolver} from "@hookform/resolvers/joi";
 import {addCar, createCar} from "../../store/CarSlice";
 
 export default function Forms() {
 
     const dispatch = useDispatch();
-  const {handleSubmit, register, reset} = useForm();
+  const {handleSubmit, register, reset} = useForm({resolver: joiResolver(carValidator), mode: 'onTouched'});
 
 
   const save = (data) => {
