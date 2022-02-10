@@ -1,0 +1,26 @@
+.header {
+    min-height: 70px;
+    background-color: deeppink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header a {
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+.header a[class='active'] {
+    text-decoration: underline;
+    color: green;
+}
+
+.userLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

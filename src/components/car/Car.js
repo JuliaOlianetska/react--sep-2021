@@ -1,10 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
-import {deleteCarAsync} from "../../store/CarSlice";
 
-export default function Car({car: {id, model, price, year}}) {
+import {carToUpdate, deleteCarAsync} from "../../store/CarSlice";
 
+export default function Car({car}) {
+const {id, model, price, year} = car;
     const dispatch = useDispatch();
-    const {info} = useSelector(state => state['carReducer']);
+  const {info} = useSelector(state => state['carReducer']);
 
     return (
         <div>
@@ -12,6 +13,7 @@ export default function Car({car: {id, model, price, year}}) {
             <div>Price: {price}</div>
             <div>Year: {year}</div>
             <button onClick={() => dispatch(deleteCarAsync({id}))}>DELETE</button>
+            <button onClick={()=>dispatch(carToUpdate({car}))}>UPDATE</button>
         </div>
     );
 }

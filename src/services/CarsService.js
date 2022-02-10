@@ -1,10 +1,11 @@
-import {axiosService} from "./AxiosService";
-import {urls} from "../configs/Urls";
+import {axiosServiceCar} from "./AxiosService";
+import {carUrls} from "../configs/carUrl";
 
 
 export const carService = {
-    getAll: () => axiosService.get(urls.cars).then(value => value.data),
-    create: (car) => axiosService.post(urls.cars, car).then(value => value.data),
-    deleteById: (id) => axiosService.delete(`${urls.cars}/${id}`)
+    getAll: () => axiosServiceCar.get(carUrls.cars).then(value => value.data),
+    create: (car) => axiosServiceCar.post(carUrls.cars, car).then(value => value.data),
+    deleteById: (id) => axiosServiceCar.delete(`${carUrls.cars}/${id}`),
+    updateById: (id, car) => axiosServiceCar.patch(`${carUrls.cars}/${id}`, car).then(value => value.data)
 
 }
