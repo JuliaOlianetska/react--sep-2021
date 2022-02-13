@@ -5,7 +5,7 @@ export default function App() {
 
     return (
         <div>
-<Form/>
+            <Form/>
             <Todo/>
         </div>
     );

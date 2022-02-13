@@ -1,0 +1,13 @@
+.todoEl {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.todoEl div {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.checked {
+    text-decoration: line-through;
+}

@@ -1,20 +1,24 @@
 import {useDispatch} from "react-redux";
-import {deleteTodo} from "../../store/TodoSlice";
-import "./TodoElStyle.css";
 
-export default function TodoElement({todoElement: {id, todo, status}}) {
+import {deleteTodo, changeStatus} from "../../store/TodoSlice";
+import css from "./TodoEl.module.css";
 
-  const dispatch = useDispatch();
+export default function TodoElement({todoElement}) {
 
-  const deleteTodoElement = () => {
-dispatch(deleteTodo({id}))
-  }
+const {id, name, status} = todoElement;
+    console.log(name);
 
-  return (
-    <div className={'todoEl'}>
-        <input type="checkbox" value={status}/>
-        <div>{todo}</div>
-      <button onClick={deleteTodoElement}>delete</button>
-    </div>
-  );
+    const dispatch = useDispatch();
+
+    const deleteTodoElement = () => {
+        dispatch(deleteTodo({id}))
+    }
+
+    return (
+        <div className={css.todoEl}>
+            <input type="checkbox" value={status} onChange={() => dispatch(changeStatus({id}))}/>
+            <div className={status?css.checked : ''}>{name}</div>
+            <button onClick={deleteTodoElement}>delete</button>
+        </div>
+    );
 }

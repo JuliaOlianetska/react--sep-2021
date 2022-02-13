@@ -1,5 +1,5 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {useSelector} from "react-redux";
+
 
 import TodoElement from "../todoElement/TodoElement";
 
